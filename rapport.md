@@ -86,3 +86,12 @@ WHERE {
 }
 ```
 On a désormais 4 réponses.
+
+**Q11.**
+```
+PREFIX : <http://example.org/>
+CONSTRUCT {?friend :hasFriend ?person}
+WHERE {
+  ?person :hasFriend ?friend .
+}
+```
