@@ -116,3 +116,12 @@ WHERE {
 GROUP BY ?x
 HAVING (COUNT(?child) = 1)
 ```
+
+**Q17.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x ?child
+WHERE {
+  ?x h:hasChild ?child .
+}
+```
