@@ -95,3 +95,32 @@ WHERE {
   ?person :hasFriend ?friend .
 }
 ```
+
+**Q13.** WIP
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+ASK WHERE {
+  ?person foaf:name "John" .
+}
+```
+
+**Q15.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x (COUNT(?child) as ?nbChildren)
+WHERE {
+  ?x h:hasChild ?child .
+}
+GROUP BY ?x
+```
+
+**Q16.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x (COUNT(?child) as ?nbChildren)
+WHERE {
+  ?x h:hasChild ?child .
+}
+GROUP BY ?x
+HAVING (COUNT(?child) = 1)
+```
