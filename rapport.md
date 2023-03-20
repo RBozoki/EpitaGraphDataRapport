@@ -96,14 +96,6 @@ WHERE {
 }
 ```
 
-**Q13.** WIP
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-ASK WHERE {
-  ?person foaf:name "John" .
-}
-```
-
 **Q15.**
 ```
 PREFIX h: <http://www.inria.fr/human#>
