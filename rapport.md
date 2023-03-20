@@ -66,3 +66,13 @@ FILTER (?y > 8 || ?ts > 12)
 }
 ```
 
+
+**Q9.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x
+WHERE {
+?x h:hasChild ?c
+}
+```
+5 réponses, dont 2 doublons.
