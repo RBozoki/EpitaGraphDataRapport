@@ -76,3 +76,13 @@ WHERE {
 }
 ```
 5 réponses, dont 2 doublons.
+
+**Q10.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT DISTINCT ?x
+WHERE {
+?x h:hasChild ?c
+}
+```
+On a désormais 4 réponses.
