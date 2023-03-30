@@ -442,3 +442,6 @@ Ce sont des personnes.
 **Q3.**
 
 La requête retourne 17 resources.
+
+Dans humanrdfs, des prédicats sont définis, et certains ont comme range ou domain Person. C'est pour cela que l'on a plus de resources retournées.
+
