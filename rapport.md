@@ -287,3 +287,40 @@ PREFIX wikibase: <http://wikiba.se/ontology#>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX bd: <http://www.bigdata.com/rdf#>
 ```
+
+En premier on a :
+```
+SELECT ?pays ?paysLabel
+WHERE {
+  ?pays wdt:P31 wd:Q6256 ;
+        wdt:P30 wd:Q18 .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "fr,en" .
+  }
+}
+```
+
+```
+SELECT ?pays ?paysLabel
+```
+Indique les variables récupérées par la requête select. Ici pays et paysLabel
+```
+WHERE {
+```
+Permet de définir le modèle à rechercher dans les données.
+```
+?pays wdt:P31 wd:Q6256 ;
+```
+P31 correspond à "instance of" et Q6256 à "country". Les ressources qui ont cette propriété sont bien des pays.
+```
+wdt:P30 wd:Q18 .
+```
+P30 correspond à "continent" et Q6256 à "South America". Le pays est sud-américain s'il a cette propriété.
+```
+  SERVICE wikibase:label {
+```
+Service qui permet de récupérer des labels pour les éléments.
+```
+    bd:serviceParam wikibase:language "fr,en" .
+```
+Défini la langue des labels. On a ici le français en priorité face à l'anglais.
