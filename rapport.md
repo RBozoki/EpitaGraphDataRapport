@@ -324,5 +324,40 @@ Service qui permet de récupérer des labels pour les éléments.
     bd:serviceParam wikibase:language "fr,en" .
 ```
 Défini la langue des labels. On a ici le français en priorité face à l'anglais.
+
 **Requête 2**
+```
+SELECT ?XLabel, ?YLabel WHERE {
+    ?X wdt:P31 wd:Q5;
+    wdt:P39 wd:Q11696.
+    SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "fr,en".
+    }
+}
+```
+On remarque la présence d'une virgule dans le SELECT qui ne devrait pas être là.
+
+De plus ?Y n'est pas présent dans la requête donc la colonne ?YLabel sera vide.
+```
+SELECT ?XLabel WHERE {
+```
+On sélectionne le label de ?X.
+```
+?X wdt:P31 wd:Q5;
+```
+Ressources qui sont une instance de human.
+```
+wdt:P39 wd:Q11696.
+```
+Ressources (humains) qui ont été président des États-Unis. P39 = "Property talk", ie sujet qui tient une position publique.
+```
+SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "fr,en".
+}
+```
+Récupère les labels français des éléments. ie les noms complets des humains. 
+
 **Requête 3**
+```
+
+```
