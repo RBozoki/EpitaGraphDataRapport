@@ -288,7 +288,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX bd: <http://www.bigdata.com/rdf#>
 ```
 
-En premier on a :
+**Requête 1**
 ```
 SELECT ?pays ?paysLabel
 WHERE {
@@ -324,3 +324,5 @@ Service qui permet de récupérer des labels pour les éléments.
     bd:serviceParam wikibase:language "fr,en" .
 ```
 Défini la langue des labels. On a ici le français en priorité face à l'anglais.
+**Requête 2**
+**Requête 3**
