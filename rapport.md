@@ -359,5 +359,16 @@ Récupère les labels français des éléments. ie les noms complets des humains
 
 **Requête 3**
 ```
-
+SELECT $paysLabel ?capitaleLabel $YLabel WHERE {
+    ?pays wdt:P31 wd:Q6256;
+    wdt:P17 ?continent;
+    wdt:P37 ?langueOfficielle;
+    wdt:P36 ?capitale.
+    FILTER(?continent = wd:Q15 && ?langueOfficielle = wd:Q150)
+    SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "fr,en".
+    }
+}
 ```
+La requête a pour but de récupérer les pays africains et leurs capitales dont la langue officielle est le français.
+Le symbole $ est utilisé à la place du ?, ce qui est une erreur.
