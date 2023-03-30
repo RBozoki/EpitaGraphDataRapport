@@ -451,3 +451,11 @@ Dans humanrdfs, des prédicats sont définis, et certains ont comme range ou dom
 
 On a dans un premier temps une seule ligne comme résultat. Avec la règle d'inférence désactivée, on a aucun résultat.
 
+**Q6.**
+
+Pas de changement observé.
+
+**Q7.**
+
+Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. hasParent est bien présent dans human.ttl. Cela explique le résultat.
+
