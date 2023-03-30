@@ -134,4 +134,44 @@ WHERE {
 
 ##	*Partie I* 
 
+```
+@Prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@Prefix dc: <http://purl.org/dc/elements/1.1/> .
+@Prefix ex:<http://example.org/>.
+
+ex:theThinker a ex:Artwork ;
+    ex:name "The Thinker" ;
+    ex:location "Rodin Museum, Paris" ;
+    ex:creator "Auguste Rodin" ;
+    ex:dateOfCreation "1902"^^xsd:gYear ;
+    ex:description "A bronze sculpture of a seated man deep in thought." .
+
+ex:monaLisa a ex:Artwork ;
+    ex:name "Mona Lisa" ;
+    ex:location "Louvre Museum, Paris" ;
+    ex:creator "Leonardo da Vinci" ;
+    ex:dateOfCreation "1503-1519" ;
+    ex:description "A portrait of a woman with a mysterious smile." .
+
+ex:notreDame a ex:Structure ;
+    ex:name "Notre-Dame Cathedral" ;
+    ex:location "Paris, France" ;
+    ex:architect "Maurice de Sully" ;
+    ex:dateOfConstruction "1163-1345" ;
+    ex:description "A Gothic cathedral located on the Île de la Cité in Paris." .
+
+ex:worldWarII a ex:Event ;
+    ex:name "World War II" ;
+    ex:date "1939-1945" ;
+    ex:location "Paris, France" ;
+    ex:description "A global war that lasted from 1939 to 1945 and involved many of the world's major countries." .
+
+ex:frenchRevolution a ex:Event ;
+    ex:name "The French Revolution" ;
+    ex:date "1789-1799" ;
+    ex:location "Paris, France" ;
+    ex:description "A period of radical social and political upheaval in France that lasted from 1789 until the late 1790s." .
+
+```
+
 ##	*Partie II* 
