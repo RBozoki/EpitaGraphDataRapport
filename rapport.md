@@ -372,3 +372,34 @@ SELECT $paysLabel ?capitaleLabel $YLabel WHERE {
 ```
 La requête a pour but de récupérer les pays africains et leurs capitales dont la langue officielle est le français.
 Le symbole $ est utilisé à la place du ?, ce qui est une erreur.
+P17 doit être remplacé par P30 si l'on veut récupérer le continent. En effet P17 = "country".
+```
+SELECT ?paysLabel ?capitaleLabel WHERE {
+```
+Sélectionne les noms des pays et des capitales.
+```
+?pays wdt:P31 wd:Q6256;
+```
+Ressources qui sont des instances de country.
+```
+wdt:P30 ?continent;
+```
+Ressources qui appartiennent à un continent.
+```
+wdt:P37 ?langueOfficielle;
+```
+Et qui ont une langue officielle.
+```
+wdt:P36 ?capitale.
+```
+Et qui ont une capitale.
+```
+FILTER(?continent = wd:Q15 && ?langueOfficielle = wd:Q150)
+```
+Filtre les pays qui sont sur le continent africain et dont la langue officielle est le français.
+```
+SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "fr,en".
+}
+```
+Récupère les noms français.
