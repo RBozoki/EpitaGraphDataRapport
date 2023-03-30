@@ -443,5 +443,11 @@ Ce sont des personnes.
 
 La requête retourne 17 resources.
 
+**Q4.**
+
 Dans humanrdfs, des prédicats sont définis, et certains ont comme range ou domain Person. C'est pour cela que l'on a plus de resources retournées.
+
+**Q5.**
+
+On a dans un premier temps une seule ligne comme résultat. Avec la règle d'inférence désactivée, on a aucun résultat.
 
