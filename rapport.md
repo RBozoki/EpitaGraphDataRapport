@@ -139,7 +139,7 @@ WHERE {
 @Prefix dc: <http://purl.org/dc/elements/1.1/> .
 @Prefix ex:<http://example.org/>.
 
-ex:theThinker a ex:Artwork ;
+ex:theThinker a ex:Sculpture ;
     ex:name "The Thinker" ;
     ex:location "Rodin Museum, Paris" ;
     ex:creator "Auguste Rodin" ;
@@ -175,3 +175,39 @@ ex:frenchRevolution a ex:Event ;
 ```
 
 ##	*Partie II* 
+
+**Q1.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x 
+WHERE {
+  ?x a ex:Sculpture .
+}
+```
+
+**Q2.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x 
+WHERE {
+  ?x a ex:Artwork .
+}
+```
+
+**Q3.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x 
+WHERE {
+  ?x a ex:Structure .
+}
+```
+
+**Q4.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+SELECT ?x 
+WHERE {
+  ?x a ex:Museum .
+}
+```
