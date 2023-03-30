@@ -422,5 +422,8 @@ select ?x where {
 ```
 **Q6.**
 ```
-...
+select ?x where {
+  ?x ?p ?y .
+  FILTER (?p IN (rdfs:domain, rdfs:range) )
+}
 ```
