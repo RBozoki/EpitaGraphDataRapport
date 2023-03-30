@@ -143,7 +143,7 @@ ex:theThinker a ex:Sculpture ;
     ex:name "The Thinker" ;
     ex:location "Rodin Museum, Paris" ;
     ex:creator "Auguste Rodin" ;
-    ex:dateOfCreation "1902"^^xsd:gYear ;
+    ex:dateOfCreation "1902"^^xsd:date ;
     ex:description "A bronze sculpture of a seated man deep in thought." .
 
 ex:monaLisa a ex:Artwork ;
@@ -238,4 +238,40 @@ WHERE {
   ?x a ex:Event .
   ?x ex:location "Paris, France" .
 }
+```
+
+## Exercice 2.3:
+
+**Q1.**
+```
+PREFIX ex: <http://example.org/movies#>
+SELECT ?actor (SAMPLE(?name) as ?actorName)
+WHERE {
+  ?actor ex:name ?name .
+}
+GROUP BY ?actor
+LIMIT 2
+```
+
+**Q2.**
+```
+PREFIX ex: <http://example.org/movies#>
+
+SELECT (SAMPLE(?movie) as ?randomMovie) (SAMPLE(?movieTitle) as ?title) (SAMPLE(?directorName) as ?director)
+WHERE {
+  ?movie ex:title ?movieTitle .
+  ?movie ex:director ?director .
+  ?director ex:name ?directorName .
+}
+LIMIT 1
+```
+
+**Q3.**
+```
+PREFIX ex: <http://example.org/movies#>
+SELECT ?genre (COUNT(?movie) as ?numMovies)
+WHERE {
+  ?movie ex:genre ?genre .
+}
+GROUP BY ?genre
 ```
