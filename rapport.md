@@ -275,3 +275,15 @@ WHERE {
 }
 GROUP BY ?genre
 ```
+
+## Exercice 2.4:
+
+##	*Partie I* 
+
+On remarque que pour les trois requête, les préfixes ne sont pas définis. On rajoutera donc :
+```
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+```
