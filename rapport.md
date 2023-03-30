@@ -427,3 +427,18 @@ select ?x where {
   FILTER (?p IN (rdfs:domain, rdfs:range) )
 }
 ```
+
+##	*Partie II*
+
+**Q2.**
+```
+PREFIX h: <http://www.inria.fr/human#>
+select (count (*) as ?count) where {
+  ?x a h:Person
+}
+```
+Ce sont des personnes.
+
+**Q3.**
+
+La requête retourne 17 resources.
