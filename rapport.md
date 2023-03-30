@@ -403,3 +403,24 @@ SERVICE wikibase:label {
 }
 ```
 Récupère les noms français.
+
+## Exercice 3.1:
+
+##	*Partie I* 
+
+**Q4.**
+```
+select ?x where {
+  ?x a rdfs:Class
+}
+```
+**Q5.**
+```
+select ?x where {
+  ?x rdfs:subClassOf ?y
+}
+```
+**Q6.**
+```
+...
+```
