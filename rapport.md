@@ -178,7 +178,7 @@ ex:frenchRevolution a ex:Event ;
 
 **Q1.**
 ```
-PREFIX h: <http://www.inria.fr/human#>
+PREFIX ex: <http://example.org/>
 SELECT ?x 
 WHERE {
   ?x a ex:Sculpture .
@@ -187,7 +187,7 @@ WHERE {
 
 **Q2.**
 ```
-PREFIX h: <http://www.inria.fr/human#>
+PREFIX ex: <http://example.org/>
 SELECT ?x 
 WHERE {
   ?x a ex:Artwork .
@@ -196,7 +196,7 @@ WHERE {
 
 **Q3.**
 ```
-PREFIX h: <http://www.inria.fr/human#>
+PREFIX ex: <http://example.org/>
 SELECT ?x 
 WHERE {
   ?x a ex:Structure .
@@ -205,9 +205,37 @@ WHERE {
 
 **Q4.**
 ```
-PREFIX h: <http://www.inria.fr/human#>
+PREFIX ex: <http://example.org/>
 SELECT ?x 
 WHERE {
   ?x a ex:Museum .
+}
+```
+
+**Q5.**
+```
+PREFIX ex: <http://example.org/>
+SELECT DISTINCT ?location
+WHERE {
+  ?x ex:location ?location .
+}
+```
+
+**Q6.**
+```
+PREFIX ex: <http://example.org/>
+SELECT ?x
+WHERE {
+  ?x ex:location "Paris, France" .
+}
+```
+
+**Q7.**
+```
+PREFIX ex: <http://example.org/>
+SELECT ?x
+WHERE {
+  ?x a ex:Event .
+  ?x ex:location "Paris, France" .
 }
 ```
