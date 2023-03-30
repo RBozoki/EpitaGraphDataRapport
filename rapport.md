@@ -125,3 +125,13 @@ WHERE {
   ?x h:hasChild ?child .
 }
 ```
+
+**Q18.**
+
+**Q19.**
+
+## Exercice 2.2:
+
+##	*Partie I* 
+
+##	*Partie II* 
