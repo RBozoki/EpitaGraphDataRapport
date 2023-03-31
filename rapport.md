@@ -462,9 +462,9 @@ Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. ha
 ##	*Partie III* 
 
 **Q1.**
-
+```
 h:hasSpouse a owl:ObjectProperty, rdf:Property, owl:SymmetricProperty ;
-
+```
 **Q2.**
 
 Pas de changements observés avec ou sans OWL RF et RDFS RL. Cependant en désactivant RDFS Subset, la symétrie des relations n'est plus observable.
@@ -472,9 +472,9 @@ Pas de changements observés avec ou sans OWL RF et RDFS RL. Cependant en désac
 On en conclu, que ce paramètre permet de définir si les relations sémantiques doivent être prisent en compte.
 
 **Q3.**
-
+```
 h:hasAncestor a rdf:Property, owl:TransitiveProperty ;
-
+```
 **Q4.**
 ```
 h:hasChild a rdf:Property ;
