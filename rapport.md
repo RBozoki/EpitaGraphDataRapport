@@ -481,3 +481,17 @@ h:hasChild a rdf:Property ;
   ...
   owl:inverseOf h:hasParent .
 ```
+**Q5.**
+```
+h:Professor a rdfs:Class ;
+  rdfs:label "professor"@en ;
+  rdfs:label "professeur"@fr ;
+  owl:intersectionOf (h:Researcher h:Lecturer) .
+```
+
+```
+h:Academic a rdfs:Class ;
+  rdfs:label "academic"@en ;
+  rdfs:label "universitaire"@fr ;
+  owl:unionOf (h:Researcher h:Lecturer) .
+```
