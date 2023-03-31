@@ -471,3 +471,13 @@ Pas de changements observés avec ou sans OWL RF et RDFS RL. Cependant en désac
 
 On en conclu, que ce paramètre permet de définir si les relations sémantiques doivent être prisent en compte.
 
+**Q3.**
+
+h:hasAncestor a rdf:Property, owl:TransitiveProperty ;
+
+**Q4.**
+```
+h:hasChild a rdf:Property ;
+  ...
+  owl:inverseOf h:hasParent .
+```
