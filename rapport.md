@@ -459,3 +459,5 @@ Pas de changement observé.
 
 Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. hasParent est bien présent dans human.ttl. Cela explique le résultat.
 
+##	*Partie III* 
+
