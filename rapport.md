@@ -495,3 +495,15 @@ h:Academic a rdfs:Class ;
   rdfs:label "universitaire"@fr ;
   owl:unionOf (h:Researcher h:Lecturer) .
 ```
+
+## Exercice 3.2:
+
+##	*Partie I* 
+
+**Q1.**
+
+**Q2.**
+
+**Q3.**
+
+**Q4.**
