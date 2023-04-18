@@ -18,7 +18,7 @@ select ?x ?y where {
   ?x rdfs:subClassOf ?y
 }
 ```
-A partir du résultat de cette requête, on peut déduire la hiérarchie suivante pour ces sous-classes:
+À partir du résultat de cette requête, on peut déduire la hiérarchie suivante pour ces sous-classes:
 
 |Aimal|||||||
 | - |-|-|-|-|-|-|
