@@ -18,7 +18,7 @@ select ?x ?y where {
   ?x rdfs:subClassOf ?y
 }
 ```
-À partir du résultat de cette requête, on peut déduire la hiérarchie suivante pour ces sous-classes:
+À partir du résultat de cette requête, on peut déduire la hiérarchie suivante pour ces sous-classes :
 
 |Aimal|||||||
 | - |-|-|-|-|-|-|
@@ -122,6 +122,12 @@ h:Academic a rdfs:Class ;
 ##	*Partie I* 
 
 **Q1.**
+```
+select (count(*) as ?count) where {
+  ?x ?p ?y
+}
+```
+On a 157 triplets dans le graph initial.
 
 **Q2.**
 
