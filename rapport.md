@@ -416,7 +416,7 @@ select ?x where {
 ```
 **Q5.**
 ```
-select ?x where {
+select ?x ?y where {
   ?x rdfs:subClassOf ?y
 }
 ```
