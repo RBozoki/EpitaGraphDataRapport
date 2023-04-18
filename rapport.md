@@ -496,6 +496,8 @@ h:Academic a rdfs:Class ;
   owl:unionOf (h:Researcher h:Lecturer) .
 ```
 
+**Q6.**
+
 ## Exercice 3.2:
 
 ##	*Partie I* 
