@@ -68,14 +68,15 @@ select ?x ?y where {
 }
 ```
 On a dans un premier temps une seule ligne comme résultat. Avec la règle d'inférence désactivée, on a aucun résultat.
+La différence est expliqué par le fait que cette relation est inférée.
 
 **Q6.**
 
-Pas de changement observé.
+Une deuxième resource apparait. Cela s'explique car Karl avait une épouse mais étais défini comme une Personne et non male. Le rajout de cette information en tant que "hasfather" infère qu'il est un Male. En effet Male est le co-domaine de hasfather.
 
 **Q7.**
 
-Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. hasParent est bien présent dans human.ttl. Cela explique le résultat.
+Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. Comme hasParent est bien présent dans human.ttl, par inférence on obtient des réultats.
 
 
 ##	*Partie III* 
@@ -84,9 +85,13 @@ Dans humanrdfs, hasParent est défini comme une subPropertyOf de hasAncestor. ha
 ```
 h:hasSpouse a owl:ObjectProperty, rdf:Property, owl:SymmetricProperty ;
 ```
+```
+h:hasFriend a owl:ObjectProperty, rdf:Property, owl:SymmetricProperty ;
+```
 **Q2.**
 
-Pas de changements observés avec ou sans OWL RF et RDFS RL. Cependant en désactivant RDFS Subset, la symétrie des relations n'est plus observable.
+La requête renvoie dans un premier temps 12 ressources dont les symétriques. En désactivant l'inférence (RDFS Subset), les symétriques ne sont plus renvoyés, ie plus que 6.
+Pas de changements observés avec ou sans OWL RF et RDFS RL. 
 
 On en conclu, que ce paramètre permet de définir si les relations sémantiques doivent être prisent en compte.
 
@@ -94,28 +99,57 @@ On en conclu, que ce paramètre permet de définir si les relations sémantiques
 ```
 h:hasAncestor a rdf:Property, owl:TransitiveProperty ;
 ```
+On vérifie la transitivité en comparant le nombre de résultats avant et après cet ajout. Les résultats passent de 5 à 10.
+
+
 **Q4.**
 ```
 h:hasChild a rdf:Property ;
   ...
   owl:inverseOf h:hasParent .
 ```
+On a autant de relations ?x hasChild ?y que de relations ?x hasParent ?y.
+
 **Q5.**
 ```
-h:Professor a rdfs:Class ;
+h:Professor a owl:Class ;
   rdfs:label "professor"@en ;
   rdfs:label "professeur"@fr ;
-  owl:intersectionOf (h:Researcher h:Lecturer) .
+  owl:intersectionOf (                          
+    [ a owl:Class ; owl:intersectionOf (h:Researcher h:Lecturer) ]                                                                     
+  ) .
 ```
+La requête a Professor renvoie bien le même réultat que la requête ne gardant que les Person qui sont à la fois des Researcher et des Lecturer.
 
 ```
-h:Academic a rdfs:Class ;
+h:Academic a owl:Class ;
   rdfs:label "academic"@en ;
   rdfs:label "universitaire"@fr ;
-  owl:unionOf (h:Researcher h:Lecturer) .
+  owl:unionOf (                          
+    [ a owl:Class ; owl:unionOf (h:Researcher h:Lecturer) ]                                                                     
+  ) .
 ```
+Une personne est Professor, et trois sont Academic. On obtient les mêmes résultats en effectuant l'union et l'intersection à la main.
 
 **Q6.**
+```
+h:Man a rdfs:Class, owl:Class ;
+  ...
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:hasSpouse ;
+    owl:allValuesFrom h:Woman
+  ] .
+
+h:Woman a rdfs:Class, owl:Class ;
+  ...
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:hasSpouse ;
+    owl:allValuesFrom h:Man
+  ] .
+```
+Nous avons testé cet ajout en ayant exécuté la requête après avoir mis un couple de deux individus du même sexe. Ce résultat n'apparaît pas dans les instances. Donc le allValuesFrom fonctionne.
 
 ## Exercice 3.2:
 
@@ -128,7 +162,8 @@ select (count(*) as ?count) where {
 }
 ```
 On a 157 triplets dans le graph initial.
-
+METTRE LES INFERENCES COCHEES 
+134 157 - 134
 **Q2.**
 
 **Q3.**
