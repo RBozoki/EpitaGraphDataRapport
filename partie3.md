@@ -157,11 +157,6 @@ Nous avons testé cet ajout en ayant exécuté la requête après avoir mis un c
 
 **Q1.**
 ```
-select (count(distinct(?p)) as ?count) where { 
-	?s ?p ?o .
-}
-
-
 select (count(*) as ?count)
 where {
   select distinct ?s ?p ?o
@@ -173,6 +168,7 @@ where {
 On a 272 triplets distincts dans le graphe initial.
 
 **Q2.**
+
 En désactivant les inférences on obtient 140 triplets distinct. Il y a donc eu 132 relations disctinctes inférées dans le graphe initial.
 
 **Q3.**
