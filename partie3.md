@@ -173,5 +173,37 @@ En désactivant les inférences on obtient 140 triplets distinct. Il y a donc eu
 
 **Q3.**
 
+On remarque dans le graphe des données concernant les Beatles. Ce qui n'a pas de rapport avec les acides aminés.
+```
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+delete where {
+  dbr:The_Beatles ?p ?o .
+}
+```
+```
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+delete where {
+  ?s dcterms:title ?o .
+}
+```
+
+Le commentaire de l'ALAT est incomplète. On le remplace avec l'introduction de son article Wikipédia.
+https://fr.wikipedia.org/wiki/Alanine_aminotransf%C3%A9rase
+```
+PREFIX ex: <http://example.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ex:ALAT rdfs:comment "\nL'alanine aminotransférase (ALAT) est une ..." .
+}
+INSERT {
+  ex:ALAT rdfs:comment "L'alanine aminotransférase (ALAT ou ALT) est une enzyme (EC 2.6.1.2) faisant partie des transaminases dont l'activité est mesurée en biologie clinique lors du bilan hépatique. Elle se trouve en quantité importante surtout dans le foie. Elle est impliquée dans le cycle de Felig. Son augmentation dans le plasma sanguin signe une cytolyse hépatique." .
+}
+WHERE {
+  ex:ALAT rdfs:comment "\nL'alanine aminotransférase (ALAT) est une ..." .
+}
+```
 
 **Q4.**
